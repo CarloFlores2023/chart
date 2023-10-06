@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import Forms from "@/components/Forms";
+import { evaluate } from "mathjs";
+
 import { Line } from "react-chartjs-2";
 
 import {
@@ -57,15 +59,32 @@ const HomePage = () => {
 
     calcularData(); // Calcula los datos de la gráfica al cargar la página o cuando cambie la expresión o intervalos
   }, [expression, start, end]);
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Realiza el cálculo de la gráfica cuando se envía el formulario
+    calculateChartData();
+  };
+
   return (
     <div>
       <h1 className="text-center uppercase font-bold text-2xl text-sky-700 my-4">
         Aqui puede ir el formulario de ingreso de datos
-      </h1> <Forms />
-      <div className="grid grid-cols-1">
-       
+      </h1> 
+     
+      <div className="grid grid-cols-2">
+      <Forms 
+      start= {start}
+      expression = {expression}
+      end = {end}
+      setExpression={setExpression}
+      setStart={setStart}
+      setEnd={setEnd}
+      handleSubmit = {handleSubmit}
+      />
         <div className="flex justify-center items-center">
-          <div className="md:h-[6000px] md:w-[1000px] h-[400px] w-[500px] my-4">
+          <div className="md:h-[3000px] md:w-[500px] h-[400px] w-[500px] my-4">
             {chartData && (
               <Line
                 className="border border-gray-800 rounded-xl"
