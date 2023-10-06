@@ -1,11 +1,31 @@
-import '../styles/globals.css'
-const HomePage = () => {
-  return (
-    <div>
-      <h1 className="text-center  text-2xl font-bold">Home Page</h1>
-   
-    </div>
-  );
+'use client'
+
+import React, { useState, useEffect } from 'react';
+import { Line } from 'react-chartjs-2';
+
+import {
+  Chart as ChartJS,
+  LineElement,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  
+} from 'chart.js';
+
+ChartJS.register(
+  LineElement,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  
+);
+
+const HomePage = ()=> {
+    return (
+        <div>
+            Home Page
+        </div>
+    )
 }
 
 export default HomePage;
