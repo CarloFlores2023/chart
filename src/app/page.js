@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Forms from "@/components/Forms"
+import Forms from "@/components/Forms";
 import { Line } from "react-chartjs-2";
 
 import {
@@ -61,27 +61,28 @@ const HomePage = () => {
     <div>
       <h1 className="text-center uppercase font-bold text-2xl text-sky-700 my-4">
         Aqui puede ir el formulario de ingreso de datos
-
-      </h1>
-      <Forms/>
-      <div className="flex justify-center items-center">
-        <div className="h-[6000px] w-[1000px] md:h-[500px] md:w-[700px] my-4">
-          {chartData && (
-            <Line
-              className="border border-gray-800 rounded-xl"
-              data={chartData}
-              options={{
-                scales: {
-                  y: {
-                    beginAtZero: true,
-                    ticks: {
-                      maxTicksLimit: 5,
+      </h1> <Forms />
+      <div className="grid grid-cols-1">
+       
+        <div className="flex justify-center items-center">
+          <div className="md:h-[6000px] md:w-[1000px] h-[400px] w-[500px] my-4">
+            {chartData && (
+              <Line
+                className="border border-gray-800 rounded-xl"
+                data={chartData}
+                options={{
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                      ticks: {
+                        maxTicksLimit: 5,
+                      },
                     },
                   },
-                },
-              }}
-            />
-          )}
+                }}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>

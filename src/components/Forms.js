@@ -2,12 +2,12 @@
 
 const Forms = ()=> {
 return(
-    <form className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4">
+    <form className="grid grid-cols-1 md:grid-cols-1 gap-4 px-4">
         <div className="mb-4">
-        <label className="text-center justify-center block font-bold text-sky-700">Expresion Algrebraica</label>
+        <label className="text-center justify-center flex font-bold text-sky-700">Expresion Algrebraica</label>
         <input
          type="text"
-         className="border border-black rounded-md p-1 w-full "
+         className="border border-black rounded-md p-1 flex justify-center w-full"
          />
         </div>
         <div>
